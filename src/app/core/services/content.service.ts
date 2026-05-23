@@ -2,13 +2,15 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { Notice, NewsArticle, GalleryItem, MembershipTier } from '../models/content.model';
+import { Notice, NewsArticle, GalleryItem, MembershipTier, Merchandise, AdBanner } from '../models/content.model';
 
 interface ContentBundle {
   notices: Notice[];
   news: NewsArticle[];
   gallery: GalleryItem[];
   membershipTiers: MembershipTier[];
+  merchandise: Merchandise[];
+  ads: AdBanner[];
 }
 
 /**
@@ -43,5 +45,13 @@ export class ContentService {
 
   getMembershipTiers(): Observable<MembershipTier[]> {
     return this.bundle().pipe(map((b) => b.membershipTiers));
+  }
+
+  getMerchandise(): Observable<Merchandise[]> {
+    return this.bundle().pipe(map((b) => b.merchandise));
+  }
+
+  getAds(): Observable<AdBanner[]> {
+    return this.bundle().pipe(map((b) => b.ads));
   }
 }

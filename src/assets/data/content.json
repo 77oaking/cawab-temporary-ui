@@ -29,5 +29,14 @@
     { "id": "general", "name": "General Member", "tagline": "Standard alumni membership", "benefits": ["Renewable annual membership", "Voting rights at general meetings", "Access to networking events", "Mentorship program participation"] },
     { "id": "associate", "name": "Associate Member", "tagline": "For affiliated members", "benefits": ["Access to selected CAWAB events", "Community newsletter subscription", "Limited networking access"] },
     { "id": "honourary", "name": "Honourary Member", "tagline": "By invitation — distinguished contributors", "benefits": ["Conferred by the Executive Board", "Recognition at official events", "Advisory engagement opportunities"] }
+  ],
+  "merchandise": [
+    { "id": "m1", "name": "CAWAB Hoodie", "price": "৳1,200", "tag": "Apparel", "color": "#0d5132" },
+    { "id": "m2", "name": "CAWAB T-Shirt", "price": "৳650", "tag": "Apparel", "color": "#c8232c" },
+    { "id": "m3", "name": "CAWAB Coffee Mug", "price": "৳350", "tag": "Accessories", "color": "#d99a06" },
+    { "id": "m4", "name": "CAWAB Tote Bag", "price": "৳450", "tag": "Accessories", "color": "#14764a" }
+  ],
+  "ads": [
+    { "id": "ad1", "title": "Partner with CAWAB", "subtitle": "Sponsorship and advertising opportunities for organizations that want to support cantonment students nationwide.", "cta": "Become a Partner" }
   ]
 }

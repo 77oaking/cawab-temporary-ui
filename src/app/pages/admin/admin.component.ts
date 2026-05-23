@@ -30,7 +30,7 @@ import { RouterLink } from '@angular/router';
     </section>
   `,
   styles: [`
-    .admin { padding: 80px 0; min-height: 60vh; display: grid; place-items: center; }
+    .admin { padding: 130px 0 80px; min-height: 60vh; display: grid; place-items: center; }
     .admin__card { padding: 48px; text-align: center; max-width: 680px; }
     .admin__badge { display: inline-block; background: var(--cawab-gold-soft); color: var(--cawab-gold-dark); font-weight: 700; padding: 5px 16px; border-radius: 30px; font-size: 13px; margin-bottom: 16px; }
     .admin h1 { color: var(--cawab-green); margin-bottom: 14px; }

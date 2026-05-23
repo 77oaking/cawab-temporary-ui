@@ -34,3 +34,18 @@ export interface MembershipTier {
   benefits: string[];
   featured?: boolean;
 }
+
+export interface Merchandise {
+  id: string;
+  name: string;
+  price: string;
+  tag: string;
+  color: string;        // placeholder swatch used in Phase 1
+}
+
+export interface AdBanner {
+  id: string;
+  title: string;
+  subtitle: string;
+  cta: string;
+}

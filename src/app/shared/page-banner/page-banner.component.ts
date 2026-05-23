@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
   styles: [`
     .banner {
       background: linear-gradient(135deg, var(--cawab-green) 0%, var(--cawab-green-dark) 100%);
-      border-bottom: 3px solid var(--cawab-gold); color: #fff; padding: 56px 0;
+      border-bottom: 3px solid var(--cawab-gold); color: #fff; padding: 124px 0 56px;
     }
     .banner__eyebrow {
       display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 2px;

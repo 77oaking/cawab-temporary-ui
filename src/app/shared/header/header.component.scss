@@ -1,5 +1,11 @@
 .hdr {
-  position: sticky; top: 0; z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: transparent;
+  border-bottom: 1px solid rgba(245, 182, 20, .28);
+  transition: background .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+/* Solid state once scrolled (or when the mobile menu is open) */
+.hdr.scrolled {
   background: linear-gradient(135deg, var(--cawab-green) 0%, var(--cawab-green-dark) 100%);
   border-bottom: 3px solid var(--cawab-gold);
   box-shadow: var(--shadow-sm);

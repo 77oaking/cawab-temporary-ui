@@ -1,4 +1,4 @@
-<header class="hdr">
+<header class="hdr" [class.scrolled]="scrolled() || menuOpen()">
   <div class="container hdr__inner">
     <a routerLink="/" class="hdr__brand" (click)="closeMenu()">
       <app-cawab-logo [size]="48"></app-cawab-logo>
