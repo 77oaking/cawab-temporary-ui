@@ -1,0 +1,33 @@
+{
+  "notices": [
+    { "id": "n1", "title": "CAWAB Renaming Announcement — Now Cantonmentians' Alliance & Welfare Association of Bangladesh", "date": "2025-07-15", "category": "General", "pinned": true, "body": "The Founding Member Council has officially renamed the organization to CAWAB, reflecting our broader vision of uniting all cantonment-affiliated students and alumni under a single platform." },
+    { "id": "n2", "title": "Inclusion of 16 New Institutions (BN & BAF Shaheen Colleges)", "date": "2025-03-20", "category": "General", "pinned": true, "body": "The FMC has formally approved the inclusion of 16 additional institutions operated by the Bangladesh Navy and Bangladesh Air Force." },
+    { "id": "n3", "title": "Membership Registration Now Open for 2025-26 Session", "date": "2025-08-01", "category": "Academic", "body": "Life, General, Associate and Honourary membership applications are now being accepted. Visit the Membership page to apply." },
+    { "id": "n4", "title": "Annual General Meeting — Schedule To Be Announced", "date": "2025-09-10", "category": "Event", "body": "The date and venue for the upcoming AGM will be published shortly. Members are requested to keep their contact details updated." },
+    { "id": "n5", "title": "In Memoriam — Late Mohammed Sadman Sakib Chowdhury", "date": "2025-08-02", "category": "General", "body": "CAWAB mourns the loss of our senior-most founding member and remembers his contribution with profound respect and gratitude." }
+  ],
+  "news": [
+    { "id": "a1", "type": "News", "title": "CAWAB Expands to 110+ Member Institutions Nationwide", "date": "2025-07-20", "excerpt": "With the inclusion of Navy and Air Force colleges, CAWAB now unites cantonmentians from across all branches of the armed forces.", "featured": true },
+    { "id": "a2", "type": "Event", "title": "Cantonmentians' Reunion & Networking Gala", "date": "2025-10-05", "excerpt": "A flagship gathering bringing together alumni from every member institution for an evening of networking and celebration." },
+    { "id": "a3", "type": "Show", "title": "Cultural Night — Talents of the Cantonment", "date": "2025-11-12", "excerpt": "Showcasing music, drama and performances from talented cantonmentians across the country." },
+    { "id": "a4", "type": "News", "title": "Scholarship Drive Launched by Department of Education", "date": "2025-06-18", "excerpt": "A new initiative to support meritorious and underprivileged cantonment students with academic funding." },
+    { "id": "a5", "type": "Event", "title": "Disaster Relief Volunteer Mobilization Workshop", "date": "2025-05-30", "excerpt": "Training session for volunteers under the Disaster Management & Relief Affairs department." },
+    { "id": "a6", "type": "News", "title": "CAWAB Signs MoU with Partner Organizations", "date": "2025-04-22", "excerpt": "Public Relations department announces new institutional partnerships to expand member benefits." }
+  ],
+  "gallery": [
+    { "id": "g1", "album": "Events", "caption": "Founders' Council Meeting", "image": "#0d5132" },
+    { "id": "g2", "album": "Events", "caption": "Annual Gathering 2024", "image": "#c8232c" },
+    { "id": "g3", "album": "Relief", "caption": "Flood Relief Distribution", "image": "#14764a" },
+    { "id": "g4", "album": "Shows", "caption": "Cultural Night Performance", "image": "#d99a06" },
+    { "id": "g5", "album": "Meetings", "caption": "Executive Board Session", "image": "#083821" },
+    { "id": "g6", "album": "Events", "caption": "Membership Drive Campaign", "image": "#9c1820" },
+    { "id": "g7", "album": "Shows", "caption": "Sports Tournament Finals", "image": "#0d5132" },
+    { "id": "g8", "album": "Relief", "caption": "Winter Clothing Drive", "image": "#14764a" }
+  ],
+  "membershipTiers": [
+    { "id": "life", "name": "Life Member", "tagline": "Lifetime status with full privileges", "featured": true, "benefits": ["Permanent membership — no renewal required", "Full voting rights at general meetings", "Priority access to all CAWAB events", "Eligibility for executive positions", "Lifetime alumni network access"] },
+    { "id": "general", "name": "General Member", "tagline": "Standard alumni membership", "benefits": ["Renewable annual membership", "Voting rights at general meetings", "Access to networking events", "Mentorship program participation"] },
+    { "id": "associate", "name": "Associate Member", "tagline": "For affiliated members", "benefits": ["Access to selected CAWAB events", "Community newsletter subscription", "Limited networking access"] },
+    { "id": "honourary", "name": "Honourary Member", "tagline": "By invitation — distinguished contributors", "benefits": ["Conferred by the Executive Board", "Recognition at official events", "Advisory engagement opportunities"] }
+  ]
+}

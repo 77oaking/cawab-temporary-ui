@@ -1,0 +1,43 @@
+.controls { margin-bottom: 18px; }
+.searchbox input {
+  width: 100%; padding: 14px 18px; border: 2px solid var(--line); border-radius: 40px;
+  font-size: 15px; font-family: inherit; transition: border .15s ease;
+}
+.searchbox input:focus { outline: none; border-color: var(--cawab-green); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.filter {
+  padding: 8px 16px; border-radius: 30px; border: 1.5px solid var(--line);
+  background: var(--card); font-size: 14px; font-weight: 500; color: var(--muted);
+  transition: all .15s ease;
+}
+.filter:hover { border-color: var(--cawab-green-light); }
+.filter.active { background: var(--cawab-green); color: #fff; border-color: var(--cawab-green); }
+.filter__count {
+  display: inline-block; background: rgba(0,0,0,.08); border-radius: 12px;
+  padding: 0 7px; font-size: 12px; margin-left: 4px;
+}
+.filter.active .filter__count { background: rgba(255,255,255,.22); }
+
+.result-count { color: var(--muted); font-size: 14px; margin: 14px 0 20px; }
+
+.inst-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.inst { padding: 22px; display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease; }
+.inst:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.inst__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 8px; }
+.inst__code {
+  font-weight: 800; color: var(--cawab-green); font-size: 15px; letter-spacing: .5px;
+  background: rgba(13,81,50,.08); padding: 4px 10px; border-radius: 6px;
+}
+.inst h3 { font-size: 16px; line-height: 1.35; margin-bottom: 14px; flex-grow: 0; }
+.inst__meta { list-style: none; font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.inst__meta li { padding: 2px 0; }
+.inst__meta b { color: var(--ink); font-weight: 600; }
+.inst__links { margin-top: auto; display: flex; gap: 14px; }
+.inst__links a { color: var(--cawab-green); font-weight: 600; font-size: 14px; }
+.inst__links a:hover { color: var(--cawab-red); }
+
+.empty { text-align: center; color: var(--muted); padding: 40px; }
+
+@media (max-width: 960px) { .inst-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .inst-grid { grid-template-columns: 1fr; } }

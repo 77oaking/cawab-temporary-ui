@@ -1,0 +1,32 @@
+<header class="hdr">
+  <div class="container hdr__inner">
+    <a routerLink="/" class="hdr__brand" (click)="closeMenu()">
+      <app-cawab-logo [size]="48"></app-cawab-logo>
+      <span class="hdr__brand-text">
+        <strong>CAWAB</strong>
+        <small>{{ i18n.t('brand.tagline') }}</small>
+      </span>
+    </a>
+
+    <nav class="hdr__nav" [class.open]="menuOpen()">
+      <a *ngFor="let item of nav"
+         [routerLink]="item.path"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: !!item.exact }"
+         (click)="closeMenu()">{{ i18n.t(item.key) }}</a>
+
+      <div class="hdr__nav-actions">
+        <button class="lang" (click)="i18n.toggle()" [attr.aria-label]="'Switch language'">
+          {{ i18n.lang() === 'en' ? 'বাংলা' : 'English' }}
+        </button>
+        <a routerLink="/contact" class="btn btn--gold join" (click)="closeMenu()">
+          {{ i18n.t('nav.join') }} <span aria-hidden="true">›</span>
+        </a>
+      </div>
+    </nav>
+
+    <button class="hdr__burger" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

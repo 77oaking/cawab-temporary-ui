@@ -1,0 +1,42 @@
+<section class="banner" *ngIf="dept">
+  <div class="container">
+    <a routerLink="/departments" class="back">‹ All Departments</a>
+    <span class="banner__num">Department {{ dept.index < 10 ? '0' + dept.index : dept.index }}</span>
+    <h1>{{ dept.name }}</h1>
+    <p class="banner__bn" *ngIf="dept.nameBn">{{ dept.nameBn }}</p>
+  </div>
+</section>
+
+<section class="section" *ngIf="dept">
+  <div class="container detail">
+    <div class="detail__main">
+      <h2>Mission</h2>
+      <p>{{ dept.summary }}</p>
+
+      <h2>Responsibilities</h2>
+      <ul class="resp">
+        <li>Coordinate departmental initiatives in line with CAWAB's vision.</li>
+        <li>Engage members through programs, events and outreach.</li>
+        <li>Report to the Central Executive Board.</li>
+      </ul>
+      <p class="ph-note">Detailed activity logs and reports will be managed from the admin panel in Phase 2.</p>
+    </div>
+
+    <aside class="detail__side">
+      <h3>Department Officers</h3>
+      <div class="officer" *ngFor="let o of dept.officers">
+        <span class="officer__role">{{ o.role }}</span>
+        <strong *ngIf="o.name">{{ o.name }}</strong>
+        <small *ngIf="o.name">{{ o.institution }} · {{ o.batch }}</small>
+        <em *ngIf="!o.name">Position vacant / to be announced</em>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section" *ngIf="notFound">
+  <div class="container text-center">
+    <h2>Department not found</h2>
+    <a routerLink="/departments" class="btn btn--green" style="margin-top:16px">Back to Departments</a>
+  </div>
+</section>

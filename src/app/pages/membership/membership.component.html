@@ -1,0 +1,77 @@
+<app-page-banner
+  eyebrow="Join CAWAB"
+  title="Membership"
+  subtitle="Become part of a nationwide community of cantonmentians. Choose the membership that fits you.">
+</app-page-banner>
+
+<section class="section">
+  <div class="container">
+    <div class="tiers">
+      <div class="tier card" *ngFor="let t of tiers" [class.featured]="t.featured">
+        <span class="tier__flag" *ngIf="t.featured">Most Popular</span>
+        <h3>{{ t.name }}</h3>
+        <p class="tier__tag">{{ t.tagline }}</p>
+        <ul>
+          <li *ngFor="let b of t.benefits">{{ b }}</li>
+        </ul>
+        <button class="btn" [class.btn--gold]="t.featured" [class.btn--green]="!t.featured"
+                (click)="selectTier(t.id)">Choose {{ t.name }}</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY FORM -->
+<section class="section section--tight alt" id="apply">
+  <div class="container apply">
+    <div class="apply__intro">
+      <div class="eyebrow">Application</div>
+      <h2 class="section-title">Apply for Membership</h2>
+      <p class="section-sub">Fill in your details and our Membership Affairs department will verify and process your application.</p>
+    </div>
+
+    <form class="apply__form card" [formGroup]="form" (ngSubmit)="submit()" *ngIf="!submitted">
+      <div class="field">
+        <label>Full Name *</label>
+        <input formControlName="fullName" type="text">
+        <small class="err" *ngIf="form.get('fullName')?.touched && form.get('fullName')?.invalid">Required</small>
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label>Email *</label>
+          <input formControlName="email" type="email">
+          <small class="err" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">Valid email required</small>
+        </div>
+        <div class="field">
+          <label>Phone *</label>
+          <input formControlName="phone" type="tel">
+          <small class="err" *ngIf="form.get('phone')?.touched && form.get('phone')?.invalid">Required</small>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label>Institution *</label>
+          <input formControlName="institution" type="text" placeholder="e.g. HCPSC">
+          <small class="err" *ngIf="form.get('institution')?.touched && form.get('institution')?.invalid">Required</small>
+        </div>
+        <div class="field">
+          <label>Batch</label>
+          <input formControlName="batch" type="text" placeholder="e.g. H2021">
+        </div>
+      </div>
+      <div class="field">
+        <label>Membership Type *</label>
+        <select formControlName="tier">
+          <option *ngFor="let t of tiers" [value]="t.id">{{ t.name }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn--gold">Submit Application</button>
+    </form>
+
+    <div class="apply__done card" *ngIf="submitted">
+      <div class="apply__check">✓</div>
+      <h3>Application Received</h3>
+      <p>Thank you! This is a demo submission. In the live version, your application will be sent to the Membership Affairs department for verification.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+<footer class="ftr">
+  <div class="container ftr__grid">
+    <div class="ftr__col ftr__about">
+      <div class="ftr__brand">
+        <app-cawab-logo [size]="56"></app-cawab-logo>
+        <strong>CAWAB</strong>
+      </div>
+      <p>Cantonmentians' Alliance &amp; Welfare Association of Bangladesh — a unified platform for all former students of cantonment-based educational institutions.</p>
+      <div class="ftr__socials">
+        <a *ngFor="let s of socials" href="#" [attr.aria-label]="s.name" [title]="s.name">{{ s.short }}</a>
+      </div>
+    </div>
+
+    <div class="ftr__col">
+      <h4>{{ i18n.t('footer.quickLinks') }}</h4>
+      <a *ngFor="let l of links" [routerLink]="l.path">{{ i18n.t(l.key) }}</a>
+    </div>
+
+    <div class="ftr__col">
+      <h4>{{ i18n.t('footer.contact') }}</h4>
+      <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+      <a [href]="'tel:' + contact.phone">{{ contact.phone }}</a>
+      <a routerLink="/contact" class="btn btn--gold" style="margin-top:12px">{{ i18n.t('nav.join') }} ›</a>
+    </div>
+  </div>
+
+  <div class="ftr__bar">
+    <div class="container">
+      © {{ year }} CAWAB. {{ i18n.t('footer.rights') }}
+    </div>
+  </div>
+</footer>

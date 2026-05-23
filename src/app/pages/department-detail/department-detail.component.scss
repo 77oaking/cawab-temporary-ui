@@ -1,0 +1,27 @@
+.banner {
+  background: linear-gradient(135deg, var(--cawab-green) 0%, var(--cawab-green-dark) 100%);
+  border-bottom: 3px solid var(--cawab-gold); color: #fff; padding: 48px 0;
+}
+.back { color: var(--cawab-gold); font-weight: 600; font-size: 14px; display: inline-block; margin-bottom: 14px; }
+.banner__num { display: block; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; opacity: .8; }
+.banner h1 { font-size: clamp(26px, 4vw, 38px); margin-top: 4px; }
+.banner__bn { opacity: .85; margin-top: 6px; font-size: 18px; }
+
+.detail { display: grid; grid-template-columns: 1.8fr 1fr; gap: 36px; }
+.detail__main h2 { color: var(--cawab-green); font-size: 20px; margin: 0 0 12px; }
+.detail__main h2:not(:first-child) { margin-top: 28px; }
+.detail__main p { color: var(--muted); font-size: 16px; line-height: 1.7; }
+.resp { padding-left: 20px; color: var(--muted); }
+.resp li { padding: 5px 0; }
+.ph-note { font-size: 13px; color: var(--cawab-gold-dark); font-style: italic; margin-top: 18px; }
+
+.detail__side { background: var(--surface); border-radius: var(--radius); padding: 24px; height: fit-content; }
+.detail__side h3 { color: var(--cawab-green); margin-bottom: 16px; }
+.officer { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.officer:last-child { border-bottom: none; }
+.officer__role { display: block; font-size: 13px; color: var(--cawab-red); font-weight: 600; }
+.officer strong { display: block; margin-top: 2px; }
+.officer small { color: var(--muted); font-size: 12px; }
+.officer em { color: var(--muted); font-size: 13px; }
+
+@media (max-width: 820px) { .detail { grid-template-columns: 1fr; } }

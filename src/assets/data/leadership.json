@@ -1,0 +1,27 @@
+[
+  { "id": "shakawat", "name": "Md Shakawat Hossen Sozib Zaman", "institution": "HCPSC", "batch": "H2021", "role": "Founder & Initiator", "council": "Founders", "order": 1 },
+  { "id": "wasif", "name": "Wasif Ahmad Chowdhury", "institution": "HCPSC", "batch": "J2018", "role": "Founding Member (Most Junior)", "council": "Founders", "order": 2 },
+  { "id": "sadman", "name": "Mohammed Sadman Sakib Chowdhury", "institution": "CCPC", "batch": "H2020", "role": "Founding Member (Senior-most)", "council": "Founders", "memorial": true, "order": 3 },
+  { "id": "ifrat", "name": "Md. Ifrat Hossain Rafat", "institution": "HCPSC", "batch": "H2021", "role": "Founding Member", "council": "Founders", "order": 4 },
+  { "id": "momtahina", "name": "Momtahina Nur Namiha", "institution": "CCPC", "batch": "H2021", "role": "Founding Member", "council": "Founders", "order": 5 },
+  { "id": "tanvir", "name": "Md. Tanvir Haider Choyan", "institution": "HCPSC", "batch": "H2021", "role": "Founding Member", "council": "Founders", "order": 6 },
+  { "id": "tayef", "name": "Md. Toufiqur Rahman Tayef", "institution": "HCPSC", "batch": "H2021", "role": "Founding Member", "council": "Founders", "order": 7 },
+
+  { "id": "khurshid", "name": "Commodore Md Khurshid Malik (Retd)", "institution": "SRCS", "batch": "S1977", "role": "Chief Advisor", "council": "Advisory", "order": 1 },
+
+  { "id": "nazim", "name": "Dr. Anawarul Quader Nazim", "institution": "SCPSC", "batch": "S1996H1998", "role": "Chairman", "council": "Central Executive", "order": 1 },
+  { "id": "kamruzzaman", "name": "Dr. Mohammad Kamruzzaman", "institution": "SCPSC", "batch": "S1990", "role": "Vice Chairman (Cantonment Public & English)", "council": "Central Executive", "order": 2 },
+  { "id": "fahim", "name": "Fahim Dad Khan Rupok", "institution": "SCPSC", "batch": "S2008H2010", "role": "Senior Joint Secretary General", "council": "Central Executive", "order": 3 },
+  { "id": "ifrat-jsg", "name": "Md Ifrat Hossain Rafat", "institution": "HCPSC", "batch": "H2021", "role": "Joint Secretary General - 01", "council": "Central Executive", "order": 4 },
+  { "id": "shakawat-jsg", "name": "Md Shakawat Hossen", "institution": "HCPSC", "batch": "H2021", "role": "Joint Secretary General - 02", "council": "Central Executive", "order": 5 },
+  { "id": "nahid", "name": "Md. Abdullah Al Nahid", "institution": "BCBHS, BCPSC", "batch": "S1994H1996", "role": "Treasurer", "council": "Central Executive", "order": 6 },
+  { "id": "sadbee", "name": "Sadbee Bin Morshed", "institution": "SCPSC", "batch": "S2010", "role": "Assistant Treasurer", "council": "Central Executive", "order": 7 },
+  { "id": "abrar", "name": "Abrar Fahim", "institution": "SLGMMBUHS, HCPSC", "batch": "S2018H2020", "role": "Assistant Treasurer", "council": "Central Executive", "order": 8 },
+  { "id": "mostafiz", "name": "Mostafizur Rahman", "institution": "SRCC", "batch": "H2003", "role": "Organizing Secretary", "council": "Central Executive", "order": 9 },
+  { "id": "rubel", "name": "Md Rubel", "institution": "SRCC", "batch": "H2003", "role": "Senior Joint Organizing Secretary", "council": "Central Executive", "order": 10 },
+  { "id": "farhad", "name": "Farhad Uddin Chowdhury", "institution": "HCPSC", "batch": "H2020", "role": "Joint Organizing Secretary", "council": "Central Executive", "order": 11 },
+  { "id": "nazmus", "name": "Syed Nazmus Sakib", "institution": "SCPSC", "batch": "S2008H2010", "role": "Secretary, Media & Publication Affairs", "council": "Central Executive", "order": 12 },
+  { "id": "kamrul", "name": "Kamrul Hasan", "institution": "CCBHS, CCPC", "batch": "S2011H2013", "role": "Joint Secretary, Media & Publication Affairs", "council": "Central Executive", "order": 13 },
+  { "id": "ashraf", "name": "A. M. Ashraf Uddin", "institution": "SCPSC", "batch": "S2010", "role": "Secretary, Alumni Affairs", "council": "Central Executive", "order": 14 },
+  { "id": "mohaiman", "name": "Md Mohaimanul Islam", "institution": "CPSCM", "batch": "S2015H2017", "role": "Secretary, Information & Technology Affairs", "council": "Central Executive", "order": 15 }
+]

@@ -1,0 +1,85 @@
+<app-page-banner
+  eyebrow="About Us"
+  title="Who We Are"
+  subtitle="Cantonmentians' Alliance & Welfare Association of Bangladesh — uniting all cantonment-affiliated students and alumni under a single platform.">
+</app-page-banner>
+
+<!-- OVERVIEW + HISTORY -->
+<section class="section">
+  <div class="container narrow">
+    <div class="eyebrow">Overview</div>
+    <h2 class="section-title">A Unified Platform for Cantonmentians</h2>
+    <p>CAWAB is a unified platform established for all former students of cantonment-based educational institutions — including Cantonment Public, Cantonment Board, Cantonment English medium, BAF Shaheen Colleges, and Bangladesh Navy (BN) Colleges. The association strengthens bonds among alumni, promotes mutual cooperation, and creates opportunities for networking, mentorship, and social development.</p>
+
+    <div class="eyebrow" style="margin-top:36px">History</div>
+    <h3>From BCCC to CAWAB</h3>
+    <p>Originally established as the <strong>Bangladesh Cantonment College Community</strong> on 28 August 2020, the organization was renamed <strong>Bangladesh Cantonment Students' Community (BCSC)</strong> on 1 October 2021, expanding to 96 institutions. On 20 March 2025 the Founding Member Council approved 16 additional Navy and Air Force institutions, and in July 2025 it became <strong>Cantonmentians' Alliance & Welfare Association of Bangladesh (CAWAB)</strong>.</p>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="section section--tight alt">
+  <div class="container">
+    <div class="eyebrow">Founders' Council</div>
+    <h2 class="section-title">The Seven Founders</h2>
+    <p class="section-sub">CAWAB was founded by seven cantonmentians from Chattogram — five from HCPSC and two from CCPC.</p>
+    <div class="people-grid">
+      <div class="person card" *ngFor="let f of founders" [class.memorial]="f.memorial">
+        <div class="person__pic">{{ initials(f.name) }}</div>
+        <h4>{{ f.name }}</h4>
+        <span class="person__role">{{ f.role }}</span>
+        <small>{{ f.institution }} · {{ f.batch }}</small>
+        <span class="chip chip--red" *ngIf="f.memorial">In Memoriam</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVISORY -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="eyebrow">Advisory Council</div>
+    <h2 class="section-title">Advisors</h2>
+    <div class="people-grid">
+      <div class="person card" *ngFor="let a of advisory">
+        <div class="person__pic gold">{{ initials(a.name) }}</div>
+        <h4>{{ a.name }}</h4>
+        <span class="person__role">{{ a.role }}</span>
+        <small>{{ a.institution }} · {{ a.batch }}</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXECUTIVE BOARD -->
+<section class="section section--tight alt">
+  <div class="container">
+    <div class="eyebrow">Central Executive Board</div>
+    <h2 class="section-title">Leadership</h2>
+    <div class="people-grid">
+      <div class="person card" *ngFor="let e of executive">
+        <div class="person__pic">{{ initials(e.name) }}</div>
+        <h4>{{ e.name }}</h4>
+        <span class="person__role">{{ e.role }}</span>
+        <small>{{ e.institution }} · {{ e.batch }}</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGNATION HIERARCHY -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Structure</div>
+    <h2 class="section-title">Designation Hierarchy</h2>
+    <p class="section-sub">The CAWAB organizational structure across three boards.</p>
+    <div class="hierarchy">
+      <div class="hierarchy__group" *ngFor="let g of designations">
+        <h4>{{ g.group }}</h4>
+        <ol>
+          <li *ngFor="let r of g.roles">{{ r }}</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

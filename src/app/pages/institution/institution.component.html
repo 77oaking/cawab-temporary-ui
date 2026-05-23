@@ -1,0 +1,49 @@
+<app-page-banner
+  eyebrow="Member Institutions"
+  title="Institution Directory"
+  subtitle="Explore the cantonment-based educational institutions that make up the CAWAB community.">
+</app-page-banner>
+
+<section class="section">
+  <div class="container">
+    <!-- Controls -->
+    <div class="controls">
+      <div class="searchbox">
+        <input type="text" [ngModel]="search()" (ngModelChange)="search.set($event)"
+               placeholder="Search by name, code or EIIN…" aria-label="Search institutions">
+      </div>
+      <div class="filters">
+        <button *ngFor="let c of categories"
+                class="filter"
+                [class.active]="activeCategory() === c"
+                (click)="setCategory(c)">
+          {{ c }} <span class="filter__count">{{ counts()[c] || 0 }}</span>
+        </button>
+      </div>
+    </div>
+
+    <p class="result-count">{{ filtered().length }} institution(s) found</p>
+
+    <!-- Grid -->
+    <div class="inst-grid">
+      <article class="inst card" *ngFor="let i of filtered()">
+        <div class="inst__top">
+          <span class="inst__code">{{ i.shortName }}</span>
+          <span class="chip chip--green">{{ i.category }}</span>
+        </div>
+        <h3>{{ i.name }}</h3>
+        <ul class="inst__meta">
+          <li *ngIf="i.founded"><b>Founded:</b> {{ i.founded }}</li>
+          <li *ngIf="i.eiin"><b>EIIN:</b> {{ i.eiin }}</li>
+          <li *ngIf="i.phone"><b>Phone:</b> {{ i.phone }}</li>
+        </ul>
+        <div class="inst__links">
+          <a *ngIf="i.website" [href]="i.website" target="_blank" rel="noopener">Website ›</a>
+          <a *ngIf="i.email" [href]="'mailto:' + i.email">Email</a>
+        </div>
+      </article>
+    </div>
+
+    <p class="empty" *ngIf="filtered().length === 0">No institutions match your search.</p>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+.hdr {
+  position: sticky; top: 0; z-index: 100;
+  background: linear-gradient(135deg, var(--cawab-green) 0%, var(--cawab-green-dark) 100%);
+  border-bottom: 3px solid var(--cawab-gold);
+  box-shadow: var(--shadow-sm);
+}
+.hdr__inner { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 16px; }
+
+.hdr__brand { display: flex; align-items: center; gap: 12px; color: #fff; }
+.hdr__brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.hdr__brand-text strong { font-size: 22px; letter-spacing: 1px; }
+.hdr__brand-text small { font-size: 10px; opacity: .8; max-width: 200px; }
+
+.hdr__nav { display: flex; align-items: center; gap: 4px; }
+.hdr__nav > a {
+  color: rgba(255,255,255,.88); font-size: 14px; font-weight: 500;
+  padding: 8px 12px; border-radius: 6px; transition: all .15s ease; white-space: nowrap;
+}
+.hdr__nav > a:hover { background: rgba(255,255,255,.1); color: #fff; }
+.hdr__nav > a.active { color: var(--cawab-gold); font-weight: 600; }
+
+.hdr__nav-actions { display: flex; align-items: center; gap: 10px; margin-left: 8px; }
+.lang {
+  color: #fff; border: 1.5px solid rgba(255,255,255,.5); border-radius: 30px;
+  padding: 6px 14px; font-size: 13px; font-weight: 600; transition: all .15s ease;
+}
+.lang:hover { background: rgba(255,255,255,.15); }
+.join { padding: 9px 18px; font-size: 14px; }
+
+.hdr__burger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+.hdr__burger span { width: 26px; height: 3px; background: #fff; border-radius: 2px; transition: .2s; }
+
+@media (max-width: 1100px) {
+  .hdr__burger { display: flex; }
+  .hdr__nav {
+    position: absolute; top: 76px; left: 0; right: 0;
+    background: var(--cawab-green-dark); flex-direction: column; align-items: stretch;
+    padding: 12px 24px 24px; gap: 2px; max-height: 0; overflow: hidden;
+    transition: max-height .3s ease, padding .3s ease; padding-top: 0; padding-bottom: 0;
+  }
+  .hdr__nav.open { max-height: 90vh; padding: 12px 24px 24px; }
+  .hdr__nav > a { padding: 12px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .hdr__nav-actions { flex-direction: column; align-items: stretch; margin: 12px 0 0; }
+  .lang, .join { text-align: center; justify-content: center; }
+}

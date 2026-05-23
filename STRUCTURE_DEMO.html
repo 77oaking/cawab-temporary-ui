@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAWAB Website — Structure Demo (For Approval)</title>
+<style>
+  :root{
+    --green:#0d5132;
+    --green-dark:#083821;
+    --red:#c8232c;
+    --gold:#f5b614;
+    --gold-soft:#fde08a;
+    --ink:#1a1a1a;
+    --muted:#6b7280;
+    --bg:#f6f7f9;
+    --card:#ffffff;
+    --border:#e5e7eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Segoe UI', system-ui, -apple-system, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+  }
+
+  /* ---------- HEADER ---------- */
+  .top{
+    background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
+    color:#fff;
+    padding:28px 40px;
+    border-bottom:4px solid var(--gold);
+  }
+  .top h1{font-size:26px;letter-spacing:.5px}
+  .top p{opacity:.85;margin-top:4px;font-size:14px}
+  .top .pill{
+    display:inline-block;background:var(--gold);color:#1a1a1a;
+    padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;
+    text-transform:uppercase;letter-spacing:1px;margin-top:10px;
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .wrap{max-width:1280px;margin:0 auto;padding:36px 24px}
+  section{margin-bottom:48px}
+  .h2{
+    font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+    color:var(--green);margin-bottom:6px;
+  }
+  .h1{font-size:24px;font-weight:700;margin-bottom:18px;color:var(--ink)}
+  .sub{color:var(--muted);font-size:14px;margin-bottom:20px;max-width:780px}
+
+  /* ---------- TECH STACK ---------- */
+  .stack{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  }
+  .stack .item{
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    padding:18px;text-align:center;
+  }
+  .stack .item .label{font-size:11px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase}
+  .stack .item .val{font-weight:700;font-size:16px;color:var(--green);margin-top:6px}
+  .stack .item .note{font-size:12px;color:var(--muted);margin-top:4px}
+
+  /* ---------- PALETTE ---------- */
+  .palette{display:flex;gap:14px;flex-wrap:wrap}
+  .swatch{
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    padding:12px;width:160px;text-align:center;
+  }
+  .swatch .box{height:60px;border-radius:6px;margin-bottom:8px}
+  .swatch .name{font-weight:700;font-size:13px}
+  .swatch .code{font-family:'Courier New',monospace;font-size:11px;color:var(--muted)}
+
+  /* ---------- SITEMAP ---------- */
+  .sitemap{
+    background:var(--card);border:1px solid var(--border);border-radius:14px;
+    padding:24px;overflow-x:auto;
+  }
+  .tree{font-family:'Courier New',monospace;font-size:13px;line-height:1.9;white-space:nowrap}
+  .root{color:var(--green);font-weight:800;font-size:15px}
+  .branch{color:var(--red);font-weight:700}
+  .leaf{color:var(--ink)}
+  .note-inline{color:var(--muted);font-style:italic;font-size:12px}
+
+  /* ---------- PAGE CARDS ---------- */
+  .pages{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .page{
+    background:var(--card);border:1px solid var(--border);border-radius:12px;
+    padding:18px;
+  }
+  .page h3{
+    color:#fff;background:var(--green);padding:8px 12px;border-radius:6px;
+    font-size:14px;display:inline-block;margin-bottom:10px;
+  }
+  .page .what{font-size:13px;color:var(--muted);margin-bottom:10px}
+  .page ul{padding-left:18px;font-size:13px;color:var(--ink)}
+  .page ul li{margin-bottom:4px}
+  .page .badge{
+    display:inline-block;background:var(--gold-soft);color:#7a5400;
+    padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;
+    margin-left:6px;letter-spacing:.5px;
+  }
+
+  /* ---------- WIREFRAME ---------- */
+  .wire{
+    background:var(--card);border:1px solid var(--border);border-radius:12px;
+    padding:22px;
+  }
+  .wire-title{font-weight:700;font-size:14px;margin-bottom:14px;color:var(--green)}
+  .wire-nav{
+    display:flex;gap:8px;background:var(--green);padding:10px;border-radius:6px;
+    color:#fff;font-size:11px;margin-bottom:14px;flex-wrap:wrap;
+  }
+  .wire-nav span{padding:4px 8px;background:rgba(255,255,255,.12);border-radius:4px}
+  .wire-hero{
+    background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
+    color:#fff;padding:30px;border-radius:8px;margin-bottom:14px;text-align:center;
+    border-bottom:3px solid var(--gold);
+  }
+  .wire-hero h4{font-size:18px;margin-bottom:4px}
+  .wire-hero p{font-size:12px;opacity:.85}
+  .wire-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+  .wire-block{
+    background:#eef2ee;border:1px dashed #9bb4a0;padding:18px;
+    text-align:center;font-size:11px;font-weight:600;color:var(--green-dark);
+    border-radius:6px;min-height:70px;display:flex;align-items:center;justify-content:center;
+  }
+  .wire-footer{
+    background:var(--green-dark);color:#fff;padding:14px;border-radius:6px;
+    font-size:11px;text-align:center;
+  }
+
+  /* ---------- DEPARTMENTS GRID ---------- */
+  .deps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .dep{
+    background:var(--card);border:1px solid var(--border);border-radius:8px;
+    padding:12px;font-size:12px;
+  }
+  .dep .n{font-weight:700;color:var(--red);font-size:11px}
+  .dep .t{font-weight:600;color:var(--ink);margin-top:2px}
+
+  /* ---------- INSTITUTIONS ---------- */
+  .inst-cats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  .inst{
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    padding:18px;text-align:center;
+  }
+  .inst .num{font-size:30px;font-weight:800;color:var(--green)}
+  .inst .lbl{font-size:12px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+
+  /* ---------- MEMBERSHIP ---------- */
+  .members{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .member{
+    background:var(--card);border:2px solid var(--border);border-radius:12px;
+    padding:18px;text-align:center;border-top:4px solid var(--green);
+  }
+  .member.featured{border-top-color:var(--gold)}
+  .member h4{color:var(--green);margin-bottom:6px;font-size:15px}
+  .member p{font-size:12px;color:var(--muted)}
+
+  /* ---------- CONFIRM BAR ---------- */
+  .confirm{
+    background:linear-gradient(135deg,var(--gold) 0%,#e5a710 100%);
+    padding:24px 28px;border-radius:14px;margin-top:30px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+  }
+  .confirm h3{font-size:18px;color:#1a1a1a;margin-bottom:4px}
+  .confirm p{font-size:13px;color:#3a2f00}
+
+  /* ---------- FUTURE HOOKS ---------- */
+  .hooks{
+    background:#fff8e6;border-left:4px solid var(--gold);
+    padding:16px 20px;border-radius:8px;
+  }
+  .hooks h4{color:#7a5400;margin-bottom:8px;font-size:14px}
+  .hooks ul{padding-left:20px;font-size:13px;color:#5a4000}
+  .hooks ul li{margin-bottom:4px}
+
+  @media(max-width:900px){
+    .stack,.pages,.deps,.inst-cats,.members,.wire-grid{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div style="max-width:1280px;margin:0 auto">
+    <span class="pill">For Approval — Structural Demo</span>
+    <h1>CAWAB Website — Complete Structure & Plan</h1>
+    <p>Cantonmentians' Alliance & Welfare Association of Bangladesh — review every page, section, and stack decision before UI build begins.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- TECH STACK -->
+  <section>
+    <div class="h2">01 — Tech Architecture</div>
+    <div class="h1">Full Stack Plan</div>
+    <p class="sub">Phase 1 (now): build the UI only with mock data and clear service stubs. Phase 2 (later): swap stubs for real API calls — no UI refactor needed.</p>
+    <div class="stack">
+      <div class="item"><div class="label">Frontend</div><div class="val">Angular</div><div class="note">UI + Admin Panel</div></div>
+      <div class="item"><div class="label">API Layer</div><div class="val">Next.js + TypeScript</div><div class="note">Phase 2</div></div>
+      <div class="item"><div class="label">Database</div><div class="val">MongoDB</div><div class="note">Phase 2</div></div>
+      <div class="item"><div class="label">Current Build</div><div class="val">UI Only</div><div class="note">Mock data + service stubs</div></div>
+    </div>
+  </section>
+
+  <!-- PALETTE -->
+  <section>
+    <div class="h2">02 — Brand Identity</div>
+    <div class="h1">Color Palette & Identity</div>
+    <p class="sub">Inspired by the CAWAB logo (Bangladesh flag green & red + gold laurel) — matches your reference homepage screenshot.</p>
+    <div class="palette">
+      <div class="swatch"><div class="box" style="background:#0d5132"></div><div class="name">CAWAB Green</div><div class="code">#0D5132</div></div>
+      <div class="swatch"><div class="box" style="background:#083821"></div><div class="name">Deep Green</div><div class="code">#083821</div></div>
+      <div class="swatch"><div class="box" style="background:#c8232c"></div><div class="name">Heritage Red</div><div class="code">#C8232C</div></div>
+      <div class="swatch"><div class="box" style="background:#f5b614"></div><div class="name">Laurel Gold</div><div class="code">#F5B614</div></div>
+      <div class="swatch"><div class="box" style="background:#f6f7f9;border:1px solid #ddd"></div><div class="name">Canvas</div><div class="code">#F6F7F9</div></div>
+    </div>
+  </section>
+
+  <!-- SITEMAP -->
+  <section>
+    <div class="h2">03 — Sitemap</div>
+    <div class="h1">Complete Navigation Tree</div>
+    <p class="sub">Based on your Website Sheet1.csv. 9 top-level pages with nested sub-pages.</p>
+    <div class="sitemap">
+      <div class="tree">
+<span class="root">CAWAB.org</span><br>
+├── <span class="branch">Home</span><br>
+├── <span class="branch">About Us (Designation)</span><br>
+│   ├── <span class="leaf">Chairman's Message</span><br>
+│   ├── <span class="leaf">Founders' Council</span> <span class="note-inline">(7 founders)</span><br>
+│   ├── <span class="leaf">Advisory Council</span><br>
+│   ├── <span class="leaf">Central Executive Board</span><br>
+│   ├── <span class="leaf">Board of Directors</span><br>
+│   ├── <span class="leaf">Officers</span><br>
+│   └── <span class="leaf">Units</span><br>
+├── <span class="branch">Notice Board</span><br>
+├── <span class="branch">Departments</span> <span class="note-inline">(17 departments)</span><br>
+│   ├── <span class="leaf">Treasury · Alumni · Branding & Merchandising · Cantonment Institutional</span><br>
+│   ├── <span class="leaf">Cultural & Sports · Disaster Management · Education · Foreign Affairs</span><br>
+│   ├── <span class="leaf">Health & Family · IT Affairs · Land & Logistics · Law & Justice</span><br>
+│   └── <span class="leaf">Media & Publication · Membership · Military · Public Relations · Research · University</span><br>
+├── <span class="branch">Membership</span><br>
+│   ├── <span class="leaf">Life Member</span><br>
+│   ├── <span class="leaf">General Member</span><br>
+│   ├── <span class="leaf">Associate Member</span><br>
+│   └── <span class="leaf">Honourary Member</span><br>
+├── <span class="branch">Institution</span> <span class="note-inline">(110+ institutions from CSV)</span><br>
+│   ├── <span class="leaf">Bangladesh Army (Cantonment Public · Board · English)</span><br>
+│   ├── <span class="leaf">Dept of Military Lands & Cantonments</span><br>
+│   ├── <span class="leaf">Bangladesh Navy (BN Colleges)</span><br>
+│   └── <span class="leaf">Bangladesh Air Force (BAF Shaheen)</span><br>
+├── <span class="branch">Gallery</span><br>
+├── <span class="branch">News Portal</span><br>
+│   ├── <span class="leaf">Shows</span><br>
+│   ├── <span class="leaf">News</span><br>
+│   └── <span class="leaf">Events</span><br>
+└── <span class="branch">Contact Us</span><br>
+    └── <span class="leaf">Join Us (CTA)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOMEPAGE WIREFRAME -->
+  <section>
+    <div class="h2">04 — Homepage Wireframe</div>
+    <div class="h1">Home Page Layout</div>
+    <p class="sub">Combines the structure from your Details.pdf (Chairman Message, Chairman Pic, Notice, Merchandising, Ad, Gallery, social icons) with a modern hero matching the reference screenshot.</p>
+    <div class="wire">
+      <div class="wire-title">📐 Homepage — block-by-block</div>
+      <div class="wire-nav">
+        <span>🛡 CAWAB Logo</span><span>Home</span><span>About</span><span>Notice</span><span>Departments</span><span>Membership</span><span>Institution</span><span>Gallery</span><span>News</span><span>Contact</span><span style="background:var(--gold);color:#000">Join Us ▸</span>
+      </div>
+      <div class="wire-hero">
+        <h4>Empowering Cantonmentians. Building a Better Tomorrow.</h4>
+        <p>Hero with tagline + Get Involved / Our Initiatives CTAs + impact stats (1000+ Students, 110+ Institutions, 17 Departments)</p>
+      </div>
+      <div class="wire-grid">
+        <div class="wire-block">Chairman's Message<br>(text excerpt)</div>
+        <div class="wire-block">Chairman's Photo<br>+ Name + Designation</div>
+        <div class="wire-block">Notice Board<br>(latest 3-5 notices)</div>
+      </div>
+      <div class="wire-grid">
+        <div class="wire-block">Merchandising<br>(CAWAB shop preview)</div>
+        <div class="wire-block">Advertisement<br>(partner banners)</div>
+        <div class="wire-block">Gallery<br>(image strip)</div>
+      </div>
+      <div class="wire-grid" style="grid-template-columns:repeat(2,1fr)">
+        <div class="wire-block">Our Journey, Our Mission<br>(timeline: 2020 → 2021 → 2025)</div>
+        <div class="wire-block">Institution Categories<br>(4 force branches)</div>
+      </div>
+      <div class="wire-footer">Footer · Contact · WhatsApp · Facebook · Instagram · X · LinkedIn · YouTube · © CAWAB</div>
+    </div>
+  </section>
+
+  <!-- ALL PAGES -->
+  <section>
+    <div class="h2">05 — Page-by-Page Content Plan</div>
+    <div class="h1">What Lives on Each Page</div>
+    <div class="pages">
+
+      <div class="page">
+        <h3>1. Home</h3>
+        <p class="what">Hero + identity + everything in one scroll.</p>
+        <ul>
+          <li>Hero with tagline & CTAs</li>
+          <li>Impact stats counter</li>
+          <li>Chairman's message + photo</li>
+          <li>Notice board (latest)</li>
+          <li>Merchandising preview</li>
+          <li>Ad/partner banner slot</li>
+          <li>Gallery teaser</li>
+          <li>Founding timeline</li>
+        </ul>
+      </div>
+
+      <div class="page">
+        <h3>2. About Us</h3>
+        <p class="what">Identity, history, leadership structure.</p>
+        <ul>
+          <li>Overview + history (2020 → 2025)</li>
+          <li>Chairman's Message (full)</li>
+          <li>Founders' Council (7 cards)</li>
+          <li>Advisory Council</li>
+          <li>Central Executive Board</li>
+          <li>Board of Directors</li>
+          <li>Officers & Units</li>
+          <li>Designation hierarchy chart (25 ranks)</li>
+        </ul>
+      </div>
+
+      <div class="page">
+        <h3>3. Notice Board</h3>
+        <p class="what">Official announcements & circulars.</p>
+        <ul>
+          <li>Filterable list (date, category, priority)</li>
+          <li>PDF attachments support</li>
+          <li>"Pinned" notices at top</li>
+          <li>Search bar</li>
+          <li><span class="badge">Admin-managed in Phase 2</span></li>
+        </ul>
+      </div>
+
+      <div class="page">
+        <h3>4. Departments</h3>
+        <p class="what">17 department landing pages.</p>
+        <ul>
+          <li>Grid of all 17 departments with icons</li>
+          <li>Click → individual dept page</li>
+          <li>Each dept: mission, secretary, joint secretary, activities, contact</li>
+          <li>Reusable template — single component, dynamic data</li>
+        </ul>
+      </div>
+
+      <div class="page">
+        <h3>5. Membership</h3>
+        <p class="what">4 tiers with benefits + apply flow.</p>
+        <ul>
+          <li>Life · General · Associate · Honourary</li>
+          <li>Eligibility & benefits per tier</li>
+          <li>"Apply Now" button → form</li>
+          <li>Member dashboard <span class="badge">Phase 2</span></li>
+        </ul>
+      </div>
+
+      <div class="page">
+        <h3>6. Institution</h3>
+        <p class="what">110+ institutions, searchable directory.</p>
+        <ul>
+          <li>Filter by force: Army / Navy / Air Force / MLC</li>
+          <li>Filter by type: Public · Board · English · BN · BAF</li>
+          <li>A–Z search</li>
+          <li>Per-institution card: logo, founded, EIIN, website, contact</li>
+          <li>Imported from your Institution A-Z.csv</li>
+        </ul>
+      </div>
+
+      <div class="page">
+        <h3>7. Gallery</h3>
+        <p class="what">Event & activity photo archive.</p>
+        <ul>
+          <li>Masonry grid layout</li>
+          <li>Category tabs (Events, Shows, Meetings, Relief)</li>
+          <li>Lightbox view</li>
+          <li>Album-by-album browsing</li>
+        </ul>
+      </div>
+
+      <div class="page">
+        <h3>8. News Portal</h3>
+        <p class="what">Shows · News · Events — 3 sub-sections.</p>
+        <ul>
+          <li>Featured story carousel</li>
+          <li>Card grid for articles</li>
+          <li>Event calendar view</li>
+          <li>Single-article detail page</li>
+        </ul>
+      </div>
+
+      <div class="page">
+        <h3>9. Contact Us</h3>
+        <p class="what">Reach CAWAB + join flow.</p>
+        <ul>
+          <li>Email: cantonmentians.diary2020@gmail.com</li>
+          <li>Cell: +880 1938-365140</li>
+          <li>Contact form (name/email/subject/message)</li>
+          <li>Map embed</li>
+          <li>"Join Us" CTA → membership form</li>
+        </ul>
+      </div>
+
+      <div class="page">
+        <h3>10. Admin Panel <span class="badge">Phase 2</span></h3>
+        <p class="what">Hidden until Phase 2 — placeholder route now.</p>
+        <ul>
+          <li>Manage notices, news, events, gallery</li>
+          <li>Approve memberships</li>
+          <li>Institution CRUD</li>
+          <li>Department secretary assignment</li>
+          <li>Auth-gated route</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DEPARTMENTS -->
+  <section>
+    <div class="h2">06 — 17 Departments (from CAWAB Brief)</div>
+    <div class="h1">Department Directory</div>
+    <div class="deps">
+      <div class="dep"><div class="n">01</div><div class="t">Alumni Affairs</div></div>
+      <div class="dep"><div class="n">02</div><div class="t">Membership Affairs</div></div>
+      <div class="dep"><div class="n">03</div><div class="t">University Affairs</div></div>
+      <div class="dep"><div class="n">04</div><div class="t">Foreign Affairs</div></div>
+      <div class="dep"><div class="n">05</div><div class="t">Media & Publication</div></div>
+      <div class="dep"><div class="n">06</div><div class="t">Culture & Sports</div></div>
+      <div class="dep"><div class="n">07</div><div class="t">Disaster Mgmt & Relief</div></div>
+      <div class="dep"><div class="n">08</div><div class="t">Cantonment Institutional</div></div>
+      <div class="dep"><div class="n">09</div><div class="t">Law & Justice</div></div>
+      <div class="dep"><div class="n">10</div><div class="t">Land & Logistics</div></div>
+      <div class="dep"><div class="n">11</div><div class="t">Military Affairs</div></div>
+      <div class="dep"><div class="n">12</div><div class="t">Health & Family Welfare</div></div>
+      <div class="dep"><div class="n">13</div><div class="t">Education</div></div>
+      <div class="dep"><div class="n">14</div><div class="t">IT Affairs</div></div>
+      <div class="dep"><div class="n">15</div><div class="t">Public Relations</div></div>
+      <div class="dep"><div class="n">16</div><div class="t">Branding & Fundraising</div></div>
+      <div class="dep"><div class="n">17</div><div class="t">Innovation & Entrepreneurship</div></div>
+    </div>
+  </section>
+
+  <!-- INSTITUTIONS -->
+  <section>
+    <div class="h2">07 — Institution Categories</div>
+    <div class="h1">Total Member Institutions: 110+</div>
+    <div class="inst-cats">
+      <div class="inst"><div class="num">38</div><div class="lbl">Cantonment<br>Public</div></div>
+      <div class="inst"><div class="num">38</div><div class="lbl">Cantonment<br>Board</div></div>
+      <div class="inst"><div class="num">20</div><div class="lbl">Cantonment<br>English</div></div>
+      <div class="inst"><div class="num">8</div><div class="lbl">BN<br>Colleges</div></div>
+      <div class="inst"><div class="num">8</div><div class="lbl">BAF<br>Shaheen</div></div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP TIERS -->
+  <section>
+    <div class="h2">08 — Membership Tiers</div>
+    <div class="h1">4 Membership Types</div>
+    <div class="members">
+      <div class="member featured">
+        <h4>Life Member</h4>
+        <p>Lifetime status with full voting rights & privileges</p>
+      </div>
+      <div class="member">
+        <h4>General Member</h4>
+        <p>Standard alumni membership, renewable</p>
+      </div>
+      <div class="member">
+        <h4>Associate Member</h4>
+        <p>Affiliated members with limited privileges</p>
+      </div>
+      <div class="member">
+        <h4>Honourary Member</h4>
+        <p>By invitation — distinguished contributors</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURE HOOKS -->
+  <section>
+    <div class="h2">09 — Future-Proofing</div>
+    <div class="h1">Hooks for Phase 2 (Backend)</div>
+    <div class="hooks">
+      <h4>What I'll build in so Phase 2 is plug-and-play:</h4>
+      <ul>
+        <li><strong>Service layer:</strong> All data fetched via Angular services (NoticeService, InstitutionService, etc.) — Phase 2 just swaps mock JSON for HTTP calls.</li>
+        <li><strong>Environment config:</strong> <code>environment.ts</code> with <code>apiUrl</code> placeholder.</li>
+        <li><strong>Models/Interfaces:</strong> TypeScript interfaces matching planned MongoDB schemas (Institution, Notice, Member, Department, NewsArticle).</li>
+        <li><strong>Routing:</strong> Lazy-loaded admin module — route exists but redirects to "coming soon" page now.</li>
+        <li><strong>Form validation:</strong> Reactive forms ready for backend submission.</li>
+        <li><strong>Auth guards:</strong> Stub <code>AuthGuard</code> in place for admin routes.</li>
+        <li><strong>i18n ready:</strong> Structure supports Bangla/English toggle later.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONFIRMATION -->
+  <div class="confirm">
+    <div>
+      <h3>✅ Ready to build?</h3>
+      <p>If this structure looks correct, just say "go" or "build it" and I'll scaffold the complete Angular UI in your workspace. If anything needs changes — pages to add/remove, sections to reorder, colors to tweak — tell me now.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

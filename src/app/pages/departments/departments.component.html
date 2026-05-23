@@ -1,0 +1,18 @@
+<app-page-banner
+  eyebrow="Organization"
+  title="Departments"
+  subtitle="CAWAB operates through 17 specialized departments, each driving a core area of our mission.">
+</app-page-banner>
+
+<section class="section">
+  <div class="container">
+    <div class="dep-grid">
+      <a class="dep card" *ngFor="let d of departments" [routerLink]="['/departments', d.id]">
+        <span class="dep__num">{{ d.index < 10 ? '0' + d.index : d.index }}</span>
+        <h3>{{ d.name }}</h3>
+        <p>{{ d.summary }}</p>
+        <span class="dep__more">Explore ›</span>
+      </a>
+    </div>
+  </div>
+</section>

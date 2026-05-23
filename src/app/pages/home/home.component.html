@@ -1,0 +1,103 @@
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__copy fade-up">
+      <h1>
+        <span class="g">{{ i18n.t('home.hero.title1') }}</span><br>
+        {{ i18n.t('home.hero.title2') }}
+      </h1>
+      <p>{{ i18n.t('home.hero.lead') }}</p>
+      <div class="hero__cta">
+        <a routerLink="/membership" class="btn btn--gold">{{ i18n.t('home.cta.involved') }}</a>
+        <a routerLink="/departments" class="btn btn--ghost-light">{{ i18n.t('home.cta.initiatives') }} ›</a>
+      </div>
+      <blockquote class="hero__quote">
+        “Together, we learn. Together, we grow. Together, <strong>we lead.</strong>”
+      </blockquote>
+    </div>
+    <div class="hero__badge fade-up">
+      <div class="hero__shield">🛡</div>
+    </div>
+  </div>
+  <!-- Impact stats -->
+  <div class="container">
+    <div class="stats">
+      <div class="stats__item" *ngFor="let s of stats">
+        <span class="stats__val">{{ s.value }}</span>
+        <span class="stats__lbl">{{ s.label }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / TIMELINE -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Overview</div>
+    <h2 class="section-title">Our Journey, Our Mission</h2>
+    <p class="section-sub">CAWAB is a student-run platform working for the all-round development of cantonment students through unity, mentorship, welfare and community support.</p>
+    <div class="timeline">
+      <div class="timeline__node" *ngFor="let t of timeline">
+        <span class="timeline__year">{{ t.year }}</span>
+        <h4>{{ t.title }}</h4>
+        <p>{{ t.text }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAIRMAN + NOTICE -->
+<section class="section section--tight alt">
+  <div class="container two-col">
+    <div class="chairman card">
+      <div class="chairman__pic">{{ chairman?.name?.charAt(0) || 'C' }}</div>
+      <div class="chairman__body">
+        <div class="eyebrow">Chairman's Message</div>
+        <p>“CAWAB stands as a bridge between generations of cantonmentians. Our shared identity is our strength — together we build a stronger, more connected community for a better tomorrow.”</p>
+        <strong>{{ chairman?.name || 'Chairman' }}</strong>
+        <small *ngIf="chairman">{{ chairman.role }} · {{ chairman.institution }}</small>
+      </div>
+    </div>
+
+    <div class="notices card">
+      <div class="notices__head">
+        <h3>Notice Board</h3>
+        <a routerLink="/notice">{{ i18n.t('common.viewAll') }} ›</a>
+      </div>
+      <a class="notice" *ngFor="let n of notices" routerLink="/notice">
+        <span class="notice__date">{{ n.date | date:'mediumDate' }}</span>
+        <span class="notice__title">{{ n.title }}</span>
+        <span class="chip chip--gold" *ngIf="n.pinned">Pinned</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="section">
+  <div class="container">
+    <div class="row-head">
+      <div>
+        <div class="eyebrow">Latest</div>
+        <h2 class="section-title">News &amp; Events</h2>
+      </div>
+      <a routerLink="/news" class="btn btn--green">{{ i18n.t('common.viewAll') }}</a>
+    </div>
+    <div class="news-grid">
+      <a class="news-card card" *ngFor="let a of news" routerLink="/news">
+        <span class="chip chip--green">{{ a.type }}</span>
+        <h4>{{ a.title }}</h4>
+        <p>{{ a.excerpt }}</p>
+        <small>{{ a.date | date:'mediumDate' }}</small>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <div class="container cta-strip__inner">
+    <p>Every cantonment student deserves the right support and opportunities to become a better version of themselves and contribute to the nation.</p>
+    <a routerLink="/about" class="btn btn--gold">{{ i18n.t('common.learnMore') }} ›</a>
+  </div>
+</section>
